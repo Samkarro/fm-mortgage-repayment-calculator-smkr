@@ -25,15 +25,26 @@ export default function Home() {
             <div className="input-guideline-box rounded-r-5px">%</div>
           </div>
           <label htmlFor="type">Mortgage Type</label>
-          <label>
-            <input type="radio" name="type" value="repayment" /> Repayment
+          <label className="radio-label">
+            <div className="input-box radio-input-box clickable">
+              <input type="radio" name="type" value="repayment" />
+              Repayment
+            </div>
           </label>
-          <label>
-            <input type="radio" name="type" value="interest-only" /> Interest
-            Only
+          <label className="radio-label">
+            <div className="input-box radio-input-box clickable">
+              <input type="radio" name="type" value="interest-only" />
+              Interest Only
+            </div>
           </label>
         </div>
-        <button>Calculate Repayments</button>
+        <button>
+          <img
+            src="./assets/images/icon-calculator.svg"
+            alt="Calculator vector."
+          />
+          Calculate Repayments
+        </button>
       </section>
       <section id="result"></section>
     </main>

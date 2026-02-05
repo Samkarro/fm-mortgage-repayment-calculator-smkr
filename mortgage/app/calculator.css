@@ -39,6 +39,54 @@ input[type="number"] {
   font-weight: 700;
 }
 
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 1em;
+  height: 1em;
+
+  outline: 2px solid var(--text-dark);
+  outline-offset: 3px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--green-dark);
+  outline: 2px solid var(--green-dark);
+  outline-offset: 3px;
+}
+
+input[type="radio"]:focus-visible {
+  outline: 2px solid blue;
+  outline-offset: 3px;
+}
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 500px;
+  height: 60px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: larger;
+  color: var(--text-dark);
+  background-color: var(--green-dark);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--green-dark);
+}
+
 /* Classes */
 .title-and-clear-btn-container {
   display: flex;
@@ -59,8 +107,7 @@ input[type="number"] {
 .form-container {
   display: flex;
   flex-direction: column;
-  padding-block: 40px;
-  padding-bottom: 30px; /* Temporary */
+  padding-top: 40px;
 }
 
 .input-box {
@@ -83,4 +130,16 @@ input[type="number"] {
   font-weight: 700;
   color: var(--text-light);
   background-color: rgb(222, 244, 255);
+}
+
+.radio-input-box {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-left: 24px;
+}
+
+.radio-label {
+  font-weight: 700;
+  color: var(--text-dark);
 }
