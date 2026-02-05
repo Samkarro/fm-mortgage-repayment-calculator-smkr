@@ -25,3 +25,55 @@
   line-height: 1.7rem;
   font-size: 20px;
 }
+
+.success {
+  align-items: start;
+  padding-bottom: 40px;
+}
+
+.success p {
+  text-align: left;
+}
+
+.result-card {
+  background-color: var(--text-darkest);
+  border-radius: 8px;
+  width: 100%;
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card-lip {
+  background-color: var(--green-dark);
+  width: 100%;
+  border-radius: 10px;
+  height: 30px;
+  position: absolute;
+  top: -1.5%;
+  left: 0%;
+  transform: translateZ(-1px);
+}
+
+.repayment-amount {
+  font-size: 50px;
+  color: var(--green-dark);
+}
+
+.total-amount {
+  font-size: 30px;
+  color: var(--background);
+}
+
+.result-card div p {
+  margin-bottom: 14px;
+}
+
+hr {
+  color: var(--text-light);
+  width: 100%;
+}
