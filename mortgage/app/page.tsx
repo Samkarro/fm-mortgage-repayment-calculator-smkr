@@ -73,10 +73,10 @@ export default function Home() {
             </p>
             <div className="result-card">
               <p>Your monthly repayments</p>
-              <p className="repayment-amount">{result}</p>
+              <p className="repayment-amount">£{result}</p>
               <hr />
               <p>Total you'll repay over the term</p>
-              <p className="total-amount"></p>
+              <p className="total-amount">Template</p>
             </div>
           </div>
         )}

@@ -1,0 +1,27 @@
+#result {
+  background-color: var(--text-dark);
+  min-height: 430px;
+  color: var(--background);
+  padding: 40px 30px 0px 30px;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.results-container h2 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.results-container p {
+  color: var(--text-ultralight);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.7rem;
+  font-size: 20px;
+}
