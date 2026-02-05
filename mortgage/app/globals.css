@@ -2,8 +2,10 @@
   --background: #fafdfe;
   --foreground: #171717;
 
+  --text-ultralight: rgb(141, 170, 185);
   --text-light: rgb(48, 94, 113);
   --text-dark: rgb(23, 54, 67);
+  --text-darkest: rgb(13, 33, 41);
   --green-dark: rgb(205, 210, 58);
   --green-light: rgb(245, 245, 213);
 }
