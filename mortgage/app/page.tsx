@@ -10,11 +10,20 @@ export default function Home() {
         </div>
         <div className="form-container">
           <label htmlFor="amount">Mortgage Amount</label>
-          <input type="number" name="amount" />
+          <div className="input-box">
+            <div className="input-guideline-box rounded-l-5px">£</div>
+            <input type="number" name="amount" />
+          </div>
           <label htmlFor="years">Mortgage Term</label>
-          <input type="number" name="years" />
+          <div className="input-box">
+            <input type="number" name="years" />
+            <div className="input-guideline-box rounded-r-5px">years</div>
+          </div>
           <label htmlFor="rate">Interest Rate</label>
-          <input type="number" name="rate" />
+          <div className="input-box">
+            <input type="number" name="rate" />
+            <div className="input-guideline-box rounded-r-5px">%</div>
+          </div>
           <label htmlFor="type">Mortgage Type</label>
           <label>
             <input type="radio" name="type" value="repayment" /> Repayment

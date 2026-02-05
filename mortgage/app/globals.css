@@ -1,6 +1,9 @@
 :root {
-  --background: #ffffff;
+  --background: #fafdfe;
   --foreground: #171717;
+
+  --text-light: rgb(48, 94, 113);
+  --text-dark: rgb(23, 54, 67);
 }
 
 html,
@@ -26,4 +29,20 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Utilities */
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.rounded-r-5px {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.rounded-l-5px {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
