@@ -1,66 +1,52 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import "./calculator.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <section id="calculator-form">
+        <div className="title-and-clear-btn-container">
+          <h1>Mortgage Calculator</h1>
+          <p className="clickable">Clear All</p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="form-container">
+          <label htmlFor="amount">Mortgage Amount</label>
+          <div className="input-box reverse">
+            <input type="number" name="amount" />
+            <div className="input-guideline-box rounded-l-5px">£</div>
+          </div>
+          <label htmlFor="years">Mortgage Term</label>
+          <div className="input-box">
+            <input type="number" name="years" />
+            <div className="input-guideline-box rounded-r-5px">years</div>
+          </div>
+          <label htmlFor="rate">Interest Rate</label>
+          <div className="input-box">
+            <input type="number" name="rate" />
+            <div className="input-guideline-box rounded-r-5px">%</div>
+          </div>
+          <label htmlFor="type">Mortgage Type</label>
+          <label className="radio-label">
+            <div className="input-box radio-input-box clickable">
+              <input type="radio" name="type" value="repayment" />
+              Repayment
+            </div>
+          </label>
+          <label className="radio-label">
+            <div className="input-box radio-input-box clickable">
+              <input type="radio" name="type" value="interest-only" />
+              Interest Only
+            </div>
+          </label>
         </div>
-      </main>
-    </div>
+        <button>
+          <img
+            src="./assets/images/icon-calculator.svg"
+            alt="Calculator vector."
+          />
+          Calculate Repayments
+        </button>
+      </section>
+      <section id="result"></section>
+    </main>
   );
 }
