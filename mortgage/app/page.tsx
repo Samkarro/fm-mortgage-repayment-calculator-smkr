@@ -1,10 +1,14 @@
+import "./calculator.css";
+
 export default function Home() {
   return (
     <main>
       <section id="calculator-form">
-        <h1>Mortgage Calculator</h1>
-        <p>Clear All</p>
-        <div>
+        <div className="title-and-clear-btn-container">
+          <h1>Mortgage Calculator</h1>
+          <p className="clickable">Clear All</p>
+        </div>
+        <div className="form-container">
           <label htmlFor="amount">Mortgage Amount</label>
           <input type="number" name="amount" />
           <label htmlFor="years">Mortgage Term</label>
