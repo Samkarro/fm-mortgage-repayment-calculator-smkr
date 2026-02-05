@@ -59,10 +59,20 @@ input[type="radio"]:checked {
   outline: 2px solid var(--green-dark);
   outline-offset: 3px;
 }
+input[type="radio"]:checked {
+  background-color: var(--green-dark);
+  outline: 2px solid var(--green-dark);
+  outline-offset: 3px;
+}
 
 input[type="radio"]:focus-visible {
   outline: 2px solid blue;
   outline-offset: 3px;
+}
+
+input[type="number"]:focus ~ div {
+  background-color: var(--green-dark);
+  color: var(--text-dark);
 }
 
 button {
@@ -119,6 +129,14 @@ button:hover {
   margin-bottom: 24px;
 }
 
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.input-box:focus-within {
+  border-color: var(--green-dark);
+}
+
 .input-guideline-box {
   height: 100%;
   width: min-content;
@@ -137,6 +155,10 @@ button:hover {
   align-items: center;
   gap: 24px;
   padding-left: 24px;
+}
+
+.radio-input-box:has(input[type="radio"]:checked) {
+  background-color: var(--green-light);
 }
 
 .radio-label {

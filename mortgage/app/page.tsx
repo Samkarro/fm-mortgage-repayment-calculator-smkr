@@ -10,9 +10,9 @@ export default function Home() {
         </div>
         <div className="form-container">
           <label htmlFor="amount">Mortgage Amount</label>
-          <div className="input-box">
-            <div className="input-guideline-box rounded-l-5px">£</div>
+          <div className="input-box reverse">
             <input type="number" name="amount" />
+            <div className="input-guideline-box rounded-l-5px">£</div>
           </div>
           <label htmlFor="years">Mortgage Term</label>
           <div className="input-box">
