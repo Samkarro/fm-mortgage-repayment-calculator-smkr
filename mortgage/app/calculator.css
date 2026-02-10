@@ -151,6 +151,15 @@ button:hover {
   background-color: rgb(222, 244, 255);
 }
 
+.error {
+  border-color: red;
+}
+
+.error .input-guideline-box {
+  color: var(--background);
+  background-color: red;
+}
+
 .radio-input-box {
   display: flex;
   align-items: center;
