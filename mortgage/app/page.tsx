@@ -4,7 +4,11 @@ import "./calculator.css";
 import "./result.css";
 
 export default function Home() {
-  const [result, setResult] = useState<number>(0);
+  const [result, setResult] = useState<number | null>(null);
+  const [amount, setAmount] = useState<number>();
+  const [years, setYears] = useState<number>();
+  const [rate, setRate] = useState<number>();
+  const [type, setType] = useState("");
 
   return (
     <main>
@@ -16,29 +20,54 @@ export default function Home() {
         <div className="form-container">
           <label htmlFor="amount">Mortgage Amount</label>
           <div className="input-box reverse">
-            <input type="number" name="amount" />
+            <input
+              value={amount}
+              onChange={(e) => setAmount(parseFloat(e.target.value))}
+              type="number"
+              name="amount"
+            />
             <div className="input-guideline-box rounded-l-5px">£</div>
           </div>
           <label htmlFor="years">Mortgage Term</label>
           <div className="input-box">
-            <input type="number" name="years" />
+            <input
+              value={years}
+              type="number"
+              name="years"
+              onChange={(e) => setYears(parseFloat(e.target.value))}
+            />
             <div className="input-guideline-box rounded-r-5px">years</div>
           </div>
           <label htmlFor="rate">Interest Rate</label>
           <div className="input-box">
-            <input type="number" name="rate" />
+            <input
+              value={rate}
+              type="number"
+              name="rate"
+              onChange={(e) => setRate(parseFloat(e.target.value))}
+            />
             <div className="input-guideline-box rounded-r-5px">%</div>
           </div>
           <label htmlFor="type">Mortgage Type</label>
           <label className="radio-label">
             <div className="input-box radio-input-box clickable">
-              <input type="radio" name="type" value="repayment" />
+              <input
+                type="radio"
+                name="type"
+                value="repayment"
+                onSelect={(e) => setType("repayment")}
+              />
               Repayment
             </div>
           </label>
           <label className="radio-label">
             <div className="input-box radio-input-box clickable">
-              <input type="radio" name="type" value="interest-only" />
+              <input
+                type="radio"
+                name="type"
+                value="interest-only"
+                onSelect={(e) => setType("interest-only")}
+              />
               Interest Only
             </div>
           </label>
