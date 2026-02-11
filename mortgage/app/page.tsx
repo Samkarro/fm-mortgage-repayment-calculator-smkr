@@ -5,10 +5,10 @@ import "./result.css";
 
 export default function Home() {
   const [result, setResult] = useState<number>(0);
-  const [total, setTotal] = useState(0);
-  const [amount, setAmount] = useState<number>();
-  const [years, setYears] = useState<number>();
-  const [rate, setRate] = useState<number>();
+  const [total, setTotal] = useState();
+  const [amount, setAmount] = useState();
+  const [years, setYears] = useState();
+  const [rate, setRate] = useState();
   const [type, setType] = useState("");
 
   const [errorStates, setErrorState] = useState({
@@ -19,7 +19,7 @@ export default function Home() {
   });
 
   const errorCheck = (variable: number | string | undefined, guide: string) => {
-    if (!variable) {
+    if (!variable || variable == 0) {
       setErrorState((prevState) => ({
         ...prevState,
         [guide]: !variable,
@@ -130,7 +130,7 @@ export default function Home() {
         </button>
       </section>
       <section id="result">
-        {result == 0 ? (
+        {!result ? (
           <div className="results-container">
             <img
               src="./assets/images/illustration-empty.svg"
