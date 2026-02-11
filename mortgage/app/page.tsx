@@ -77,25 +77,32 @@ export default function Home() {
             />
             <div className="input-guideline-box rounded-l-5px">£</div>
           </div>
-          <label htmlFor="years">Mortgage Term</label>
-          <div className={`input-box ${errorStates.years ? "error" : ""}`}>
-            <input
-              value={years}
-              type="number"
-              name="years"
-              onChange={(e) => setYears(parseFloat(e.target.value))}
-            />
-            <div className="input-guideline-box rounded-r-5px">years</div>
-          </div>
-          <label htmlFor="rate">Interest Rate</label>
-          <div className={`input-box ${errorStates.rate ? "error" : ""}`}>
-            <input
-              value={rate}
-              type="number"
-              name="rate"
-              onChange={(e) => setRate(parseFloat(e.target.value))}
-            />
-            <div className="input-guideline-box rounded-r-5px">%</div>
+
+          <div className="mini-fields-container">
+            <div className="mini-field">
+              <label htmlFor="years">Mortgage Term</label>
+              <div className={`input-box ${errorStates.years ? "error" : ""}`}>
+                <input
+                  value={years}
+                  type="number"
+                  name="years"
+                  onChange={(e) => setYears(parseFloat(e.target.value))}
+                />
+                <div className="input-guideline-box rounded-r-5px">years</div>
+              </div>
+            </div>
+            <div className="mini-field">
+              <label htmlFor="rate">Interest Rate</label>
+              <div className={`input-box ${errorStates.rate ? "error" : ""}`}>
+                <input
+                  value={rate}
+                  type="number"
+                  name="rate"
+                  onChange={(e) => setRate(parseFloat(e.target.value))}
+                />
+                <div className="input-guideline-box rounded-r-5px">%</div>
+              </div>
+            </div>
           </div>
           <label htmlFor="type">Mortgage Type</label>
           <label className="radio-label">

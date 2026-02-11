@@ -175,3 +175,17 @@ button:hover {
   font-weight: 700;
   color: var(--text-dark);
 }
+@media (min-width: 1024px) {
+  main {
+    background-color: var(--background);
+    width: 1000px;
+
+    display: flex;
+    flex-direction: row;
+  }
+
+  section {
+    height: 600px;
+    width: 500px;
+  }
+}

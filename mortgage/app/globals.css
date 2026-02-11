@@ -50,3 +50,22 @@ a {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-ultralight);
+  }
+
+  .mini-fields-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .mini-field {
+    display: flex;
+    flex-direction: column;
+  }
+}
