@@ -58,14 +58,4 @@ a {
     justify-content: center;
     background-color: var(--text-ultralight);
   }
-
-  .mini-fields-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-  .mini-field {
-    display: flex;
-    flex-direction: column;
-  }
 }
