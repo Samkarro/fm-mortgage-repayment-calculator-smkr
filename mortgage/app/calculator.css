@@ -190,6 +190,9 @@ button:hover {
   font-weight: 700;
   color: var(--text-dark);
 }
+.mini-fields-container .input-box {
+  margin-top: 15px;
+}
 
 @media (min-width: 1024px) {
   main {

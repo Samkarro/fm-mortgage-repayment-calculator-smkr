@@ -56,12 +56,20 @@ export default function Home() {
 
   useEffect(() => {}, [errorStates]);
 
+  function handleClear(): void {
+    setAmount(0);
+    setYears(0);
+    setRate(0);
+  }
+
   return (
     <main>
       <section id="calculator-form">
         <div className="title-and-clear-btn-container">
           <h1>Mortgage Calculator</h1>
-          <p className="clickable">Clear All</p>
+          <p className="clickable" onClick={() => handleClear()}>
+            Clear All
+          </p>
         </div>
         <div className="form-container">
           <label htmlFor="amount">Mortgage Amount</label>
