@@ -77,3 +77,20 @@ hr {
   color: var(--text-light);
   width: 100%;
 }
+
+@media (min-width: 1024px) {
+  .results-container {
+    height: 100%;
+  }
+
+  #result {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-emphasis: 100%;
+    padding: 0px 40px 0px 40px;
+  }
+}

@@ -79,18 +79,22 @@ button {
   appearance: none;
   border: none;
   border-radius: 500px;
-  height: 60px;
+  height: 70px;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
-  font-size: larger;
+  font-size: 24px;
   color: var(--text-dark);
   background-color: var(--green-dark);
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   margin-bottom: 40px;
+}
+button img {
+  height: 30px;
+  width: 30px;
 }
 
 button:hover {
@@ -160,6 +164,17 @@ button:hover {
   background-color: red;
 }
 
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin-bottom: 16px;
+}
+
+.radio-container .radio-input-box {
+  margin: 0;
+}
+
 .radio-input-box {
   display: flex;
   align-items: center;
@@ -183,6 +198,7 @@ button:hover {
     display: flex;
     flex-direction: row;
     border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
   }
 
   section {
@@ -212,11 +228,5 @@ button:hover {
   .mini-field {
     display: flex;
     flex-direction: column;
-  }
-
-  #result {
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-    border-bottom-left-radius: 90px;
   }
 }

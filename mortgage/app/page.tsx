@@ -105,28 +105,30 @@ export default function Home() {
             </div>
           </div>
           <label htmlFor="type">Mortgage Type</label>
-          <label className="radio-label">
-            <div className="input-box radio-input-box clickable">
-              <input
-                type="radio"
-                name="type"
-                value="repayment"
-                onChange={(e) => setType("repayment")}
-              />
-              Repayment
-            </div>
-          </label>
-          <label className="radio-label">
-            <div className="input-box radio-input-box clickable">
-              <input
-                type="radio"
-                name="type"
-                value="interest-only"
-                onChange={(e) => setType("interest-only")}
-              />
-              Interest Only
-            </div>
-          </label>
+          <div className="radio-container">
+            <label className="radio-label">
+              <div className="input-box radio-input-box clickable">
+                <input
+                  type="radio"
+                  name="type"
+                  value="repayment"
+                  onChange={(e) => setType("repayment")}
+                />
+                Repayment
+              </div>
+            </label>
+            <label className="radio-label">
+              <div className="input-box radio-input-box clickable">
+                <input
+                  type="radio"
+                  name="type"
+                  value="interest-only"
+                  onChange={(e) => setType("interest-only")}
+                />
+                Interest Only
+              </div>
+            </label>
+          </div>
         </div>
         <button onClick={() => handleClick()}>
           <img
