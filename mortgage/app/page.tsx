@@ -5,13 +5,18 @@ import "./result.css";
 
 export default function Home() {
   const [result, setResult] = useState<number>(0);
-  const [total, setTotal] = useState();
-  const [amount, setAmount] = useState();
-  const [years, setYears] = useState();
-  const [rate, setRate] = useState();
+  const [total, setTotal] = useState<number>();
+  const [amount, setAmount] = useState<number>();
+  const [years, setYears] = useState<number>();
+  const [rate, setRate] = useState<number>();
   const [type, setType] = useState("");
 
-  const [errorStates, setErrorState] = useState({
+  const [errorStates, setErrorState] = useState<{
+    amount: boolean;
+    years: boolean;
+    rate: boolean;
+    type: boolean;
+  }>({
     amount: false,
     years: false,
     rate: false,
@@ -36,10 +41,10 @@ export default function Home() {
 
     if (Object.values(errorStates).some((v) => v === true)) return;
 
-    const P = amount;
-    const annualRate = rate / 100;
+    const P = amount ?? 0;
+    const annualRate = (rate ?? 0) / 100;
     const r = annualRate / 12;
-    const n = years * 12;
+    const n = (years ?? 0) * 12;
 
     let monthlyPayment = 0;
 
