@@ -190,10 +190,11 @@ button:hover {
   font-weight: 700;
   color: var(--text-dark);
 }
+
 @media (min-width: 1024px) {
   main {
     background-color: var(--background);
-    width: 1000px;
+    width: 1030px;
 
     display: flex;
     flex-direction: row;
@@ -202,8 +203,40 @@ button:hover {
   }
 
   section {
-    height: 600px;
-    width: 500px;
+    height: 620px;
+    width: 515px;
+  }
+
+  label {
+    margin-bottom: 12px;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  button {
+    width: 300px;
+    font-size: larger;
+    height: 60px;
+    margin: 15px 0px 0px 0px;
+  }
+
+  button img {
+    height: 24px;
+    width: 24px;
+  }
+
+  input[type="number"] {
+    font-size: larger;
+  }
+
+  input[type="radio"] {
+    width: 0.8em;
+    height: 0.8em;
+  }
+
+  #calculator-form {
+    padding: 40px;
   }
 
   .title-and-clear-btn-container {
@@ -220,11 +253,23 @@ button:hover {
     font-size: 18px;
   }
 
+  .input-box {
+    border-radius: 6px;
+    height: 50px;
+    margin-bottom: 24px;
+  }
+
+  .input-guideline-box {
+    padding-inline: 1rem;
+    font-size: 18px;
+  }
+
   .mini-fields-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
+
   .mini-field {
     display: flex;
     flex-direction: column;
