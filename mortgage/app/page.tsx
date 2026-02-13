@@ -23,30 +23,17 @@ export default function Home() {
     type: false,
   });
 
-  const errorCheck = (variable: number | string | undefined, guide: string) => {
-    if (!variable || variable == 0) {
-      setErrorState((prevState) => ({
-        ...prevState,
-        [guide]: !variable,
-      }));
-    }
-    return;
-  };
   const handleClick = async () => {
-    setErrorState({
-      amount: false,
-      years: false,
-      rate: false,
-      type: false,
-    });
+    const newErrors = {
+      amount: !amount || amount === 0,
+      years: !years || years === 0,
+      rate: !rate || rate === 0,
+      type: !type,
+    };
 
-    await errorCheck(amount, "amount");
-    await errorCheck(years, "years");
-    await errorCheck(rate, "rate");
-    await errorCheck(type, "type");
-    console.log(errorStates);
+    setErrorState(newErrors);
 
-    if (Object.values(errorStates).some((v) => v === true)) return;
+    if (Object.values(newErrors).some(Boolean)) return;
 
     const P = amount ?? 0;
     const annualRate = (rate ?? 0) / 100;
