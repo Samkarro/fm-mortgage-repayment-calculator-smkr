@@ -77,49 +77,58 @@ export default function Home() {
             />
             <div className="input-guideline-box rounded-l-5px">£</div>
           </div>
-          <label htmlFor="years">Mortgage Term</label>
-          <div className={`input-box ${errorStates.years ? "error" : ""}`}>
-            <input
-              value={years}
-              type="number"
-              name="years"
-              onChange={(e) => setYears(parseFloat(e.target.value))}
-            />
-            <div className="input-guideline-box rounded-r-5px">years</div>
-          </div>
-          <label htmlFor="rate">Interest Rate</label>
-          <div className={`input-box ${errorStates.rate ? "error" : ""}`}>
-            <input
-              value={rate}
-              type="number"
-              name="rate"
-              onChange={(e) => setRate(parseFloat(e.target.value))}
-            />
-            <div className="input-guideline-box rounded-r-5px">%</div>
+
+          <div className="mini-fields-container">
+            <div className="mini-field">
+              <label htmlFor="years">Mortgage Term</label>
+              <div className={`input-box ${errorStates.years ? "error" : ""}`}>
+                <input
+                  value={years}
+                  type="number"
+                  name="years"
+                  onChange={(e) => setYears(parseFloat(e.target.value))}
+                />
+                <div className="input-guideline-box rounded-r-5px">years</div>
+              </div>
+            </div>
+            <div className="mini-field">
+              <label htmlFor="rate">Interest Rate</label>
+              <div className={`input-box ${errorStates.rate ? "error" : ""}`}>
+                <input
+                  value={rate}
+                  type="number"
+                  name="rate"
+                  onChange={(e) => setRate(parseFloat(e.target.value))}
+                />
+                <div className="input-guideline-box rounded-r-5px">%</div>
+              </div>
+            </div>
           </div>
           <label htmlFor="type">Mortgage Type</label>
-          <label className="radio-label">
-            <div className="input-box radio-input-box clickable">
-              <input
-                type="radio"
-                name="type"
-                value="repayment"
-                onChange={(e) => setType("repayment")}
-              />
-              Repayment
-            </div>
-          </label>
-          <label className="radio-label">
-            <div className="input-box radio-input-box clickable">
-              <input
-                type="radio"
-                name="type"
-                value="interest-only"
-                onChange={(e) => setType("interest-only")}
-              />
-              Interest Only
-            </div>
-          </label>
+          <div className="radio-container">
+            <label className="radio-label">
+              <div className="input-box radio-input-box clickable">
+                <input
+                  type="radio"
+                  name="type"
+                  value="repayment"
+                  onChange={(e) => setType("repayment")}
+                />
+                Repayment
+              </div>
+            </label>
+            <label className="radio-label">
+              <div className="input-box radio-input-box clickable">
+                <input
+                  type="radio"
+                  name="type"
+                  value="interest-only"
+                  onChange={(e) => setType("interest-only")}
+                />
+                Interest Only
+              </div>
+            </label>
+          </div>
         </div>
         <button onClick={() => handleClick()}>
           <img
@@ -144,12 +153,15 @@ export default function Home() {
           </div>
         ) : (
           <div className="results-container success">
-            <h2>Your results</h2>
-            <p>
-              Your results are shown below based on the information you
-              provided. To adjust the results, edit the form and click
-              "calculate repayments" again.
-            </p>
+            <div className="success-message-container">
+              <h2>Your results</h2>
+
+              <p>
+                Your results are shown below based on the information you
+                provided. To adjust the results, edit the form and click
+                "calculate repayments" again.
+              </p>
+            </div>
             <div className="result-card">
               <div className="card-lip"></div>
               <p>Your monthly repayments</p>
