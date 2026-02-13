@@ -33,6 +33,13 @@ export default function Home() {
     return;
   };
   const handleClick = async () => {
+    setErrorState({
+      amount: false,
+      years: false,
+      rate: false,
+      type: false,
+    });
+
     await errorCheck(amount, "amount");
     await errorCheck(years, "years");
     await errorCheck(rate, "rate");
