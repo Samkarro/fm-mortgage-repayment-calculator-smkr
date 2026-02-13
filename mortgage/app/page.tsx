@@ -153,12 +153,15 @@ export default function Home() {
           </div>
         ) : (
           <div className="results-container success">
-            <h2>Your results</h2>
-            <p>
-              Your results are shown below based on the information you
-              provided. To adjust the results, edit the form and click
-              "calculate repayments" again.
-            </p>
+            <div className="success-message-container">
+              <h2>Your results</h2>
+
+              <p>
+                Your results are shown below based on the information you
+                provided. To adjust the results, edit the form and click
+                "calculate repayments" again.
+              </p>
+            </div>
             <div className="result-card">
               <div className="card-lip"></div>
               <p>Your monthly repayments</p>
