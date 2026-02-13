@@ -5,41 +5,40 @@ import "./result.css";
 
 export default function Home() {
   const [result, setResult] = useState<number>(0);
-  const [total, setTotal] = useState();
-  const [amount, setAmount] = useState();
-  const [years, setYears] = useState();
-  const [rate, setRate] = useState();
+  const [total, setTotal] = useState<number>();
+  const [amount, setAmount] = useState<number>();
+  const [years, setYears] = useState<number>();
+  const [rate, setRate] = useState<number>();
   const [type, setType] = useState("");
 
-  const [errorStates, setErrorState] = useState({
+  const [errorStates, setErrorState] = useState<{
+    amount: boolean;
+    years: boolean;
+    rate: boolean;
+    type: boolean;
+  }>({
     amount: false,
     years: false,
     rate: false,
     type: false,
   });
 
-  const errorCheck = (variable: number | string | undefined, guide: string) => {
-    if (!variable || variable == 0) {
-      setErrorState((prevState) => ({
-        ...prevState,
-        [guide]: !variable,
-      }));
-    }
-    return;
-  };
   const handleClick = async () => {
-    await errorCheck(amount, "amount");
-    await errorCheck(years, "years");
-    await errorCheck(rate, "rate");
-    await errorCheck(type, "type");
-    console.log(errorStates);
+    const newErrors = {
+      amount: !amount || amount === 0,
+      years: !years || years === 0,
+      rate: !rate || rate === 0,
+      type: !type,
+    };
 
-    if (Object.values(errorStates).some((v) => v === true)) return;
+    setErrorState(newErrors);
 
-    const P = amount;
-    const annualRate = rate / 100;
+    if (Object.values(newErrors).some(Boolean)) return;
+
+    const P = amount ?? 0;
+    const annualRate = (rate ?? 0) / 100;
     const r = annualRate / 12;
-    const n = years * 12;
+    const n = (years ?? 0) * 12;
 
     let monthlyPayment = 0;
 
@@ -57,12 +56,20 @@ export default function Home() {
 
   useEffect(() => {}, [errorStates]);
 
+  function handleClear(): void {
+    setAmount(0);
+    setYears(0);
+    setRate(0);
+  }
+
   return (
     <main>
       <section id="calculator-form">
         <div className="title-and-clear-btn-container">
           <h1>Mortgage Calculator</h1>
-          <p className="clickable">Clear All</p>
+          <p className="clickable" onClick={() => handleClear()}>
+            Clear All
+          </p>
         </div>
         <div className="form-container">
           <label htmlFor="amount">Mortgage Amount</label>
@@ -77,7 +84,7 @@ export default function Home() {
             />
             <div className="input-guideline-box rounded-l-5px">£</div>
           </div>
-
+          {errorStates.amount && <span>This field is required</span>}
           <div className="mini-fields-container">
             <div className="mini-field">
               <label htmlFor="years">Mortgage Term</label>
@@ -90,7 +97,9 @@ export default function Home() {
                 />
                 <div className="input-guideline-box rounded-r-5px">years</div>
               </div>
+              {errorStates.years && <span>This field is required</span>}
             </div>
+
             <div className="mini-field">
               <label htmlFor="rate">Interest Rate</label>
               <div className={`input-box ${errorStates.rate ? "error" : ""}`}>
@@ -102,6 +111,7 @@ export default function Home() {
                 />
                 <div className="input-guideline-box rounded-r-5px">%</div>
               </div>
+              {errorStates.rate && <span>This field is required</span>}
             </div>
           </div>
           <label htmlFor="type">Mortgage Type</label>
@@ -128,6 +138,7 @@ export default function Home() {
                 Interest Only
               </div>
             </label>
+            {errorStates.type && <span>This field is required</span>}
           </div>
         </div>
         <button onClick={() => handleClick()}>
