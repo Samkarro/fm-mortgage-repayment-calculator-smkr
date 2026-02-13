@@ -84,7 +84,7 @@ export default function Home() {
             />
             <div className="input-guideline-box rounded-l-5px">£</div>
           </div>
-
+          {errorStates.amount && <span>This field is required</span>}
           <div className="mini-fields-container">
             <div className="mini-field">
               <label htmlFor="years">Mortgage Term</label>
@@ -97,7 +97,9 @@ export default function Home() {
                 />
                 <div className="input-guideline-box rounded-r-5px">years</div>
               </div>
+              {errorStates.years && <span>This field is required</span>}
             </div>
+
             <div className="mini-field">
               <label htmlFor="rate">Interest Rate</label>
               <div className={`input-box ${errorStates.rate ? "error" : ""}`}>
@@ -109,6 +111,7 @@ export default function Home() {
                 />
                 <div className="input-guideline-box rounded-r-5px">%</div>
               </div>
+              {errorStates.rate && <span>This field is required</span>}
             </div>
           </div>
           <label htmlFor="type">Mortgage Type</label>
@@ -135,6 +138,7 @@ export default function Home() {
                 Interest Only
               </div>
             </label>
+            {errorStates.type && <span>This field is required</span>}
           </div>
         </div>
         <button onClick={() => handleClick()}>

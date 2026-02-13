@@ -159,6 +159,10 @@ button:hover {
   border-color: red;
 }
 
+.error.input-box {
+  margin-bottom: 10px;
+}
+
 .error .input-guideline-box {
   color: var(--background);
   background-color: red;
@@ -194,6 +198,15 @@ button:hover {
   margin-top: 15px;
 }
 
+.mini-fields-container span {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.radio-container span {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 1024px) {
   main {
     background-color: var(--background);
@@ -206,7 +219,7 @@ button:hover {
   }
 
   section {
-    height: 620px;
+    min-height: 620px;
     width: 515px;
   }
 
@@ -276,5 +289,9 @@ button:hover {
   .mini-field {
     display: flex;
     flex-direction: column;
+  }
+
+  .mini-field .input-box {
+    margin-top: 0px;
   }
 }
